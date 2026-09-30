@@ -1,11 +1,13 @@
 # Penetration Testing Methodology
 
-A structured and repeatable methodology for conducting authorized penetration tests and security assessments across **web applications, network infrastructure, and Active Directory environments**.
+A repeatable, evidence-based methodology for authorized penetration tests across **web applications, APIs, cloud environments, and Active Directory**. Seven phases from scoping to retest, governed by NIST SP 800-115 and PTES, with findings rated on CVSS v3.1 and mapped to MITRE ATT&CK.
 
-**Prepared by:** Md Jahidul Mir
-**Role:** Independent Security Consultant | Junior Penetration Tester
+**Author:** Jahidul Mir | Penetration Tester
 **Version:** 1.0
 **Date:** August 2026
+**Related:** [Web Application Penetration Testing Portfolio](https://github.com/mir942/web-application-pentesting)
+
+> Personal project. Not affiliated with or endorsed by any employer or client.
 
 ---
 
@@ -16,6 +18,15 @@ This repository documents a phased approach to planning, performing, validating,
 The methodology is designed to provide a consistent workflow from **pre-engagement and scoping through reconnaissance, enumeration, vulnerability analysis, exploitation, post-exploitation, reporting, and remediation**.
 
 All testing activities should be performed only against systems for which explicit authorization has been obtained.
+
+---
+
+## Core Principles
+
+* Scanner output is a lead, not a finding. Every issue is reproduced manually, with evidence and a CVSS rating, before it reaches a report.
+* Chain findings into attack paths instead of listing isolated issues.
+* Write for the team that will fix it: proof of concept, business impact, and a fix they can ship.
+* Stay in scope and non-destructive.
 
 ---
 
@@ -85,13 +96,14 @@ All testing activities should be performed only against systems for which explic
 
 ## Governing Frameworks
 
-| Framework           | Primary Use                                         |
-| ------------------- | --------------------------------------------------- |
-| **NIST SP 800-115** | Scoping, rules of engagement, and testing lifecycle |
-| **PTES**            | Penetration testing phase structure                 |
-| **OWASP WSTG**      | Web application security testing                    |
-| **MITRE ATT&CK**    | Post-exploitation and lateral-movement mapping      |
-| **CVSS v3.1**       | Vulnerability severity classification               |
+| Framework                     | Primary Use                                         |
+| ----------------------------- | --------------------------------------------------- |
+| **NIST SP 800-115**           | Scoping, rules of engagement, and testing lifecycle |
+| **PTES**                      | Penetration testing phase structure                 |
+| **OWASP WSTG**                | Web application security testing                    |
+| **OWASP API Security Top 10** | API security testing                                |
+| **MITRE ATT&CK**              | Post-exploitation and lateral-movement mapping      |
+| **CVSS v3.1**                 | Vulnerability severity classification               |
 
 ---
 
@@ -106,7 +118,7 @@ The web application assessment process includes testing of:
 * Business logic
 * Security configuration
 * SSRF and insecure deserialization
-* API security
+* API security (OWASP API Security Top 10)
 * Security headers
 
 Testing activities are aligned with the OWASP Testing Guide and OWASP Top 10.
@@ -127,6 +139,19 @@ Where authorized and within scope, the methodology covers:
 * Attack-path documentation
 
 Relevant activity can be mapped to MITRE ATT&CK techniques.
+
+---
+
+## Cloud Security Assessment
+
+Where authorized and within scope:
+
+* IAM policy and trust-relationship review
+* Storage exposure enumeration (S3, blob)
+* Instance metadata (IMDS) exposure
+* Network exposure and logging coverage review
+
+Tools: ScoutSuite, Prowler, Pacu
 
 ---
 
@@ -231,14 +256,12 @@ This repository serves as a professional reference for:
 
 ## Author
 
-**Md Jahidul Mir**
-Independent Security Consultant | Junior Penetration Tester
+**Jahidul Mir** | Penetration Tester | Web App, API, Cloud & Active Directory
 
-[LinkedIn](https://www.linkedin.com/in/mir942/)
+[LinkedIn](https://www.linkedin.com/in/mir942/) | [GitHub](https://github.com/mir942)
 
 ---
 
 ## Disclaimer
 
 The content in this repository is provided for authorized security testing, education, and professional development. No information in this repository should be used to conduct unauthorized activity against third-party systems.
-
